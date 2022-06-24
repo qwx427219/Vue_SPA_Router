@@ -1,28 +1,34 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div style="padding:20px; background-color: royalblue;">
+    <!-- <MyLogin></MyLogin> -->
+    <!-- <hr> -->
+    <button @click="$router.go(-1)">◀</button>
+    <button @click="$router.go(1)">▶</button>
+    <ul>
+      <li>
+        <router-link to="/home">home</router-link>
+      </li>
+      <li>
+        <router-link to="/about">about</router-link>
+      </li>
+      <li>
+        <router-link to="/login">login</router-link>
+      </li>
+    </ul>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  // import MyLogin from '@/pages/MyLogin'
+  export default {
+    name: 'App',
+    // components: {MyLogin}
   }
-}
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  .active {
+    background-color: skyblue;
+  }
 </style>
